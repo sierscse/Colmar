@@ -1,0 +1,136 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Helvetica;
+  width: 100%;
+}
+
+
+/* NOTE: Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  height: 64px;
+  padding: 0 24px;
+}
+
+header .desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  font-weight: bold;
+}
+
+header #title {
+  color: grey;
+  font-weight: normal;
+}
+
+header .desktop ul {
+  display: flex;
+}
+
+header .desktop li {
+  list-style-type: none;
+  padding-right: 16px;
+}
+
+header .desktop li:last-child {
+  padding-right: 0;
+}
+
+header nav.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 470px) {
+
+  header .desktop {
+    display: none;
+  }
+
+  header nav.mobile {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+
+/* NOTE: Banner */
+
+.banner {
+  background-color: lightgray;
+  width: 100%;
+  height: auto;
+}
+
+.banner .content {
+  display: flex;
+  width: auto;
+}
+
+.banner .content img {
+  width: 60%;
+  height: 500px;
+  margin: 32px 24px;
+}
+
+.banner .content #slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+
+.banner .content #slogan h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 2.5rem;
+}
+
+.banner .content #slogan p {
+  line-height: 1.5rem;
+}
+
+.banner .content #button {
+  background-color: gray;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 470px) {
+  .banner .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner .content img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .banner .content #slogan {
+    margin: 32px 16px;
+    width: auto;
+  }
+
+  .banner .content #slogan h1 {
+    margin-bottom: 32px;
+  }
+
+  .banner .content #button {
+    margin-top: 24px;
+  }
+
+}
