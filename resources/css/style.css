@@ -3,8 +3,9 @@ html {
 }
 
 body {
-  font-family: Helvetica;
+  font-family: Helvetica, sans-serif;
   width: 100%;
+  color: #404040;
 }
 
 
@@ -147,11 +148,15 @@ header nav.mobile {
 }
 
 .info .left {
-  width: 60%;
+  width: 62%;
   display: flex;
   flex-direction: column;
   margin-right: 24px;
 }
+
+/* REVIEW: not sure why I can't get the widths for the banner and more info pics
+on left to match in size. I had to set the one above to 62% so that it would appear
+to be the same width as the pic in the banner */
 
 .info .left img {
   height: 65%;
@@ -262,5 +267,79 @@ header nav.mobile {
   .info .right #lecture {
     background-color: white;
   }
+}
+
+/* NOTE: Courses section */
+.courses {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+
+}
+ .courses h1 {
+   font-size: 2rem;
+   padding: 2rem 0;
+   text-align: center;
+ }
+
+ .courses .directory {
+  display: flex;
+  margin: 0 40px 32px 72px;
+ }
+
+.courses .subject {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 32px;
+  background-color: white;
+}
+
+.course .subject img {
+  height: auto;
+  width: 100%;
+}
+.courses .description {
+  padding: 1rem 0 1.5rem 1rem;
+}
+
+.courses .description h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+
+}
+
+.courses .description p {
+  line-height: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.courses .mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 470px) {
+  .courses .desktop {
+    display: none;
+  }
+
+  .courses .mobile {
+    display: block;
+    margin: 0 1rem 1.5rem 1rem;
+  }
+
+  .courses .mobile p {
+    background-color: #cccccc;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 1rem 0 1.5rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .courses h1 {
+    padding: 2rem 0 1.5rem 0;    
+  }
+
+
 
 }
