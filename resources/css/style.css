@@ -1,3 +1,9 @@
+/* REVIEW: first pass complete. Review and refactor.
+In particular make sure to update to rems where appropriate.
+Research fixed positioning for header: should I position all sections relative,
+or add a 'main' class to the rest of the site to position it relative to
+the header? */
+
 html {
   font-size: 16px;
 }
@@ -14,15 +20,19 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  width: auto;
-  height: 64px;
-  padding: 0 24px;
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  position: fixed;
+  z-index: 5;
+  border-bottom: 1px solid gray;
 }
 
 header .desktop {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1.5rem;
 }
 
 header p {
@@ -59,7 +69,7 @@ header nav.mobile {
 
   header nav.mobile {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex: 1;
   }
 }
@@ -337,9 +347,136 @@ to be the same width as the pic in the banner */
     margin-bottom: 0.5rem;
   }
   .courses h1 {
-    padding: 2rem 0 1.5rem 0;    
+    padding: 2rem 0 1.5rem 0;
+  }
+}
+
+/* NOTE: Thesis Section */
+
+.thesis {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.thesis h1 {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.thesis h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.thesis p {
+  line-height: 1.5rem;
+}
+
+.thesis .projects {
+  display: flex;
+}
+
+.thesis .featured-project {
+  width: 60%;
+  margin: 0 2rem;
+}
+
+.thesis .featured-project video {
+  width: 100%;
+}
+
+.thesis .featured-project h2 {
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.thesis .featured-project p {
+  margin-bottom: 2rem;
+}
+
+.thesis .other-projects {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 500px;
+  margin-right: 0.5rem;
+}
+
+
+.thesis .project {
+  width: auto;
+  display: flex;
+}
+
+.thesis .project:first-child {
+  background-color: lightgray;
+}
+
+.thesis .project img {
+  width: 35%;
+  height: auto;
+  margin: 16px;
+}
+
+.thesis .project .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 470px) {
+  .thesis .desktop {
+    display: none;
   }
 
+  .thesis h1 {
+    padding: 2rem 0 1rem 0;
+  }
 
+  .thesis .featured-project {
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
 
+}
+
+/* NOTE: Footer Section */
+
+footer {
+  border-top: 1px solid darkgray;
+  padding-bottom: 2rem;
+}
+
+footer span, a {
+  font-size: 0.75rem;
+}
+
+footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 0 2rem;
+}
+
+footer a {
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 470px) {
+  footer .desktop {
+    display: none;
+  }
+
+  footer {
+    border-top: 0;
+    padding-bottom: 0;
+  }
+
+  footer .copyright {
+    justify-content: flex-start;
+    margin: 1rem 0 1rem 2rem;
+  }
 }
